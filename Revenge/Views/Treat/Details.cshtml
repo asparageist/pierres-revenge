@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Revenge.Models
+@model Revenge.Models.Treat
+
+<div class='pageStyle'>
+  <h2>@Model.TreatName</h2>
+
+  @if (@Model.JoinEntities.Count == 0)
+  {
+    <p>This treat isn't connected to any flavors</p>
+  }
+  else
+  {
+    <h4>connections:</h4>
+    <ul>
+      @foreach (FlavorTreat join in Model.JoinEntities)
+      {
+        <li>@join.Flavor.FlavorName</li>
+      }
+    </ul>
+  }
+
+  @Html.ActionLink("Add Flavor to Treat", "AddFlavor", new { id = Model.TreatID })
+  <br>
+  @if (@Model.JoinEntities.Count != 0)
+  {
+    @Html.ActionLink("Remove Flavor from Treat", "RemoveFlavor", new { id = Model.FlavorID })
+  }
+  <br>
+  @Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatID })
+  <br>
+  @Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatID })
+  <br>
+  @Html.ActionLink("Other Treat", "Index", new { id = Model.TreatID })
+</div>

@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Revenge.Models.Flavor
+
+<div class='pageStyle'>
+  <h4>Add a new flavor</h4>
+
+
+  @using (Html.BeginForm())
+  {
+    @Html.TextBoxFor(model => model.FlavorName)
+    @Html.ValidationMessageFor(model => model.FlavorName)
+    <input type="submit" value="Add" />
+
+  }
+  <p>@Html.ActionLink("Show all flavors", "Index")</p>
+</div>

@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Revenge.Models.Treat
+
+<div class='pageStyle'>
+  <h4>Add a new treat</h4>
+
+
+  @using (Html.BeginForm())
+  {
+    @Html.TextBoxFor(model => model.TreatName)
+    @Html.ValidationMessageFor(model => model.TreatName)
+    <input type="submit" value="Add" />
+
+  }
+  <p>@Html.ActionLink("Show all treats", "Index")</p>
+</div>

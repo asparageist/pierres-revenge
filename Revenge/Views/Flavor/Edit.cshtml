@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Revenge.Models.Flavor
+<div class='pageStyle'>
+  <h2>@Model.FlavorName</h2>
+
+  <h4>Edit @Html.DisplayFor(model => model.FlavorName)</h4>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.FlavorID)
+
+    @Html.LabelFor(model => model.FlavorName)
+    @Html.EditorFor(model => model.FlavorName)
+
+    <input type="submit" value="Save" />
+  }
+
+  <p>@Html.ActionLink("Back to flavors", "Index")</p>
+</div>

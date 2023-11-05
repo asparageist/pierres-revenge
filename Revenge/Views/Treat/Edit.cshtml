@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Revenge.Models.Treat
+<div class='pageStyle'>
+  <h2>@Model.TreatName</h2>
+
+  <h4>Edit @Html.DisplayFor(model => model.TreatName)</h4>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.TreatID)
+
+    @Html.LabelFor(model => model.TreatName)
+    @Html.EditorFor(model => model.TreatName)
+
+    <input type="submit" value="Save" />
+  }
+
+  <p>@Html.ActionLink("Back to treats", "Index")</p>
+</div>

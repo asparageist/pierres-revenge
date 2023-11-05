@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Revenge.Models.Flavor
+
+<div class='pageStyle'>
+  <h2>Treats:</h2>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.FlavorID)
+    @Html.DropDownList("TreatID", (SelectList)ViewBag.TreatID)
+
+    <input type="submit" value="Remove" />
+  }
+
+  <p>@Html.ActionLink("Back to Flavors", "Index")</p>
+</div>

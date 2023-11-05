@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Revenge.Models.Treat
+
+<div class='pageStyle'>
+  <h2>Are you sure you want to delete <br>@Model.TreatName?</h2>
+
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" />
+  }
+  @Html.ActionLink("Back to treats", "Index")
+</div>

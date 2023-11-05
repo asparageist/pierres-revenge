@@ -10,8 +10,8 @@ using Revenge.Models;
 namespace Revenge.Migrations
 {
     [DbContext(typeof(RevengeContext))]
-    [Migration("20231105083151_Initial")]
-    partial class Initial
+    [Migration("20231105101340_newInitial")]
+    partial class newInitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

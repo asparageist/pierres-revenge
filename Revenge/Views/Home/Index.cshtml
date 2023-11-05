@@ -6,11 +6,14 @@
 @model Dictionary<string, object[]>
 
 
-<div>
-  <h1>Pierre's Revenge!</h1>
+<div id='title'>
+  <p>Pierre's Revenge</p>
+
 </div>
-<div>
-  <h2>this time it's authenticated</h2>
+<h2 id='tagline'>...this time it's authenticated</h2>
+
+
+<div class='pageStyle'>
 
   @* @if (User.Identity.IsAuthenticated)
   {

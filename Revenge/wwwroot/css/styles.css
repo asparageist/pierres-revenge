@@ -1,0 +1,69 @@
+@font-face {
+  font-family: butcher;
+  src: url(/Butcherman-Regular.ttf);
+
+}
+
+@font-face {
+  font-family: elite;
+  src: url(/SpecialElite-Regular.ttf);
+}
+
+#title {
+  font-family: butcher;
+  color: red;
+  font-style: italic;
+  font-size: 66px;
+  text-align: center;
+  -webkit-text-stroke: 3px black;
+
+}
+
+#footer {
+  font-family: elite;
+  color:rgb(95, 95, 95);
+  font-style: italic;
+  text-align: center;
+}
+
+#tagline {
+  font-family: elite;
+  color: black;
+  font-style: italic;
+  text-align: center;
+
+}
+
+body {
+  background-color: rgba(237, 231, 222);
+  text-shadow: rgba(10, 10, 10, 1) 5px 5px 10px;
+  background-image: url('/angrypierre.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:auto;
+  background-position: center right;
+}
+
+.pageStyle {
+  font-family: elite;
+  color:rgb(95, 95, 95);
+  text-align: left;
+  margin: 0;
+  display: grid;
+  padding-right: 55%;
+  place-items: center;
+  height: 75vh;
+}
+
+
+a:link {
+  color:rgb(95, 95, 95);
+}
+
+a:visited {
+  color:rgb(115, 115, 115)
+}
+
+a:hover {
+  color: white;
+}

@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Revenge.Models
+@model Dictionary<string, object[]>
+
+
+<div>
+  <h1>Pierre's Revenge!</h1>
+</div>
+<div>
+  <h2>this time it's authenticated</h2>
+
+  @* @if (User.Identity.IsAuthenticated)
+  {
+  <h4>Treats for @User.Identity.Name</h4>
+  @if (Model["treats"].Length == 0)
+  {
+  <p>No treats have been added yet!</p>
+  }
+  <ul>
+  @foreach (Treat treat in Model["treats"])
+  {
+  <li>@Html.ActionLink(@treats.RecipeName, "Details", "Treats", new { id = @treat.TreatID })</li>
+  }
+  </ul>
+  }
+  else
+  {
+  <h4>Treats</h4>
+  <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your treats.</p>
+  } *@
+
+  <hr />
+
+  <p>@Html.ActionLink("go to recipes", "Index", "Recipe")</p>
+  <p>@Html.ActionLink("go to cuisines", "Index", "Cuisine")</p>
+  <p>@Html.ActionLink("Create or manage an account", "Index", "Account")</p>
+</div>

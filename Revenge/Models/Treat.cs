@@ -8,7 +8,7 @@ namespace Revenge.Models
     public int TreatID { get; set; }
     [Required(ErrorMessage = "what this treat is")]
     public string TreatName { get; set; }
-    public int FlavorID { get; set; }
+    public int Flavor { get; set; }
     public List<FlavorTreat> JoinEntities { get; }
     // public ApplicationUser User { get; set; }
   }

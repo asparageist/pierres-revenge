@@ -24,18 +24,25 @@ namespace Revenge.Controllers
 
     public ActionResult New()
     {
-      ViewBag.PageTitle = "Add an Flavor";
+      ViewBag.PageTitle = "Add a Flavor";
       return View();
     }
 
     [HttpPost]
     public ActionResult New(Flavor flavor)
     {
-      _db.Flavors.Add(flavor);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
-    }
+      if (!ModelState.IsValid)
+      {
+        return View(flavor);
+      }
+      else
 
+      {
+        _db.Flavors.Add(flavor);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
+    }
     public ActionResult Details(int id)
     {
       Flavor thisFlavor = _db.Flavors

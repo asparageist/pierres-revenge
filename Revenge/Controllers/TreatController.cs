@@ -15,6 +15,7 @@ namespace Revenge.Controllers
     {
       _db = db;
     }
+
     public ActionResult Index()
     {
       ViewBag.PageTitle = "All Treats";
@@ -30,9 +31,18 @@ namespace Revenge.Controllers
     [HttpPost]
     public ActionResult New(Treat treat)
     {
-      _db.Treats.Add(treat);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+      if (!ModelState.IsValid)
+      {
+        return View(treat);
+      }
+      else
+      {
+        {
+          _db.Treats.Add(treat);
+          _db.SaveChanges();
+          return RedirectToAction("Index");
+        }
+      }
     }
 
     public ActionResult Details(int id)

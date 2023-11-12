@@ -27,12 +27,11 @@
   <br>
   @if (@Model.JoinEntities.Count != 0)
   {
-    @Html.ActionLink("Remove Flavor from Treat", "RemoveFlavor", new { id = Model.FlavorID })
+    @Html.ActionLink("Remove Flavor from Treat", "RemoveFlavor", new { id = Model.TreatID })
   }
-  <br>
-  @Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatID })
-  <br>
-  @Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatID })
-  <br>
-  @Html.ActionLink("Other Treat", "Index", new { id = Model.TreatID })
+  <p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatID })</p>
+  <p>@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatID })</p>
+  <p>@Html.ActionLink("Other Treat", "Index", new { id = Model.TreatID })</p>
+  <p>@Html.ActionLink("Check out flavors", "Index", "Flavor")</p>
+
 </div>

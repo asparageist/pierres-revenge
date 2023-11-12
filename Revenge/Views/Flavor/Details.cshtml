@@ -29,10 +29,9 @@
   {
     @Html.ActionLink("Remove Treat from Flavor", "RemoveTreat", new { id = Model.FlavorID })
   }
-  <br>
-  @Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorID })
-  <br>
-  @Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorID })
-  <br>
-  @Html.ActionLink("Other Flavors", "Index", new { id = Model.FlavorID })
+  <p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorID })</p>
+  <p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorID })</p>
+  <p>@Html.ActionLink("Other Flavors", "Index", new { id = Model.FlavorID })</p>
+  <p>@Html.ActionLink("Check out treats", "Index", "Treat")</p>
+
 </div>

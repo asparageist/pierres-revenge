@@ -3,8 +3,24 @@
 }
 <div class='pageStyle'>
 
-  <h2 id='tagline'>Authentication!!</h2>
+  <h2>Authentication!!</h2>
   <hr />
-  <p>@Html.ActionLink("Register", "Register")</p>
-  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  @if (User.Identity.IsAuthenticated)
+  {
+    <p>eyyyy, @User.Identity.Name!</p>
+    @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" value="log out" />
+    }
+
+  }
+  else
+  {
+
+    <p>@Html.ActionLink("register", "Register")</p>
+    <p>@Html.ActionLink("log in", "Login")</p>
+
+  }
+  <p>@Html.ActionLink("home", "Index", "Home")</p>
+
 </div>

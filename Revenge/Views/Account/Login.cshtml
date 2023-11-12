@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Revenge.ViewModels
+
+@model LoginViewModel
+
+<div class='pageStyle'>
+  <h2>log in</h2>
+  <hr />
+
+  @if (!ViewData.ModelState.IsValid)
+  {
+    @Html.ValidationSummary("fix these and try again")
+  }
+
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+    <hr />
+
+    @Html.LabelFor(m => m.Password)
+    @Html.EditorFor(m => m.Password)
+    <hr />
+
+    <input type="submit" value="log in" />
+  }
+
+  <p>@Html.ActionLink("register", "Register")</p>
+  <p>@Html.ActionLink("accounts", "Index")</p>
+
+</div>

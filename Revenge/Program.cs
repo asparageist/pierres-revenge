@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Revenge.Models;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace Revenge
 {
@@ -22,6 +24,10 @@ namespace Revenge
                         )
                       );
 
+      builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<RevengeContext>()
+                .AddDefaultTokenProviders();
+
       WebApplication app = builder.Build();
 
       // app.UseDeveloperExceptionPage();
@@ -30,9 +36,13 @@ namespace Revenge
 
       app.UseRouting();
 
+      app.UseAuthentication();
+      app.UseAuthorization();
+
       app.MapControllerRoute(
           name: "default",
-          pattern: "{controller=Home}/{action=Index}/{id?}");
+          pattern: "{controller=Home}/{action=Index}/{id?}"
+        );
 
       app.Run();
     }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Revenge.Models;
 
@@ -10,9 +11,10 @@ using Revenge.Models;
 namespace Revenge.Migrations
 {
     [DbContext(typeof(RevengeContext))]
-    partial class RevengeContextModelSnapshot : ModelSnapshot
+    [Migration("20231112080343_addIdentity")]
+    partial class addIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

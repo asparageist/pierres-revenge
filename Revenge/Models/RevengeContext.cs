@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Revenge.Models
 {
-  public class RevengeContext : DbContext
+  public class RevengeContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Treat> Treats { get; set; }
     public DbSet<Flavor> Flavors { get; set; }

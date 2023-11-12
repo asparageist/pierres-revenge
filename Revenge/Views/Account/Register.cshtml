@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Revenge.ViewModels
+
+@model RegisterViewModel
+<div class='pageStyle'>
+
+  <h2>new user who dis</h2>
+  <hr />
+
+  @if (!ViewData.ModelState.IsValid)
+  {
+    @Html.ValidationSummary("fix these and try again")
+  }
+
+  @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+  {
+    @Html.LabelFor(user => user.Email)
+    @Html.TextBoxFor(user => user.Email)
+    <hr />
+
+    @Html.LabelFor(user => user.Password)
+    @Html.EditorFor(user => user.Password)
+    <hr />
+
+    @Html.LabelFor(user => user.ConfirmPassword)
+    @Html.EditorFor(user => user.ConfirmPassword)
+    <hr />
+
+    <input type="submit" value="register" />
+  }
+
+  <p>@Html.ActionLink("accounts", "Index")</p>
+</div>

@@ -6,7 +6,7 @@ namespace Revenge.Models
   public class Treat
   {
     public int TreatID { get; set; }
-    [Required(ErrorMessage = "what this treat is")]
+    [Required(ErrorMessage = " eyy, what this treat is, fool? ")]
     public string TreatName { get; set; }
     public int Flavor { get; set; }
     public List<FlavorTreat> JoinEntities { get; }

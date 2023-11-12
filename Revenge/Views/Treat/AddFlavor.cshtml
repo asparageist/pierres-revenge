@@ -7,13 +7,21 @@
 <div class='pageStyle'>
   <h2>Flavors:</h2>
 
-  @using (Html.BeginForm())
+  @if (ViewBag.FlavorID != null && ((SelectList)ViewBag.FlavorID).Any())
   {
-    @Html.HiddenFor(model => model.TreatID)
 
-    @Html.DropDownList("FlavorID")
+    @using (Html.BeginForm())
+    {
+      @Html.HiddenFor(model => model.TreatID)
 
-    <input type="submit" value="Save" />
+      @Html.DropDownList("FlavorID")
+
+      <input type="submit" value="Save" />
+    }
+  }
+  else
+  {
+    <p>no flavors yet!</p>
   }
 
   <p>@Html.ActionLink("Back to Treats", "Index")</p>

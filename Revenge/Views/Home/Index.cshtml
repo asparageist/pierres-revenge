@@ -15,27 +15,6 @@
 
 <div class='pageStyle'>
 
-  @* @if (User.Identity.IsAuthenticated)
-  {
-  <h4>Treats for @User.Identity.Name</h4>
-  @if (Model["treats"].Length == 0)
-  {
-  <p>No treats have been added yet!</p>
-  }
-  <ul>
-  @foreach (Treat treat in Model["treats"])
-  {
-  <li>@Html.ActionLink(@treats.RecipeName, "Details", "Treats", new { id = @treat.TreatID })</li>
-  }
-  </ul>
-  }
-  else
-  {
-  <h4>Treats</h4>
-  <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your treats.</p>
-  } *@
-
-  <hr />
 
   <p>@Html.ActionLink("edit treats", "Index", "treat")</p>
   <p>@Html.ActionLink("edit flavors", "Index", "flavor")</p>

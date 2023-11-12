@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Revenge.Controllers
 {
@@ -22,6 +24,7 @@ namespace Revenge.Controllers
       return View(_db.Flavors.ToList());
     }
 
+    [Authorize]
     public ActionResult New()
     {
       ViewBag.PageTitle = "Add a Flavor";
@@ -52,6 +55,7 @@ namespace Revenge.Controllers
       return View(thisFlavor);
     }
 
+    [Authorize]
     public ActionResult AddTreat(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavors => flavors.FlavorID == id);
@@ -73,7 +77,7 @@ namespace Revenge.Controllers
       return RedirectToAction("Details", new { id = flavor.FlavorID });
     }
 
-
+    [Authorize]
     public ActionResult Edit(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavors => flavors.FlavorID == id);
@@ -88,6 +92,7 @@ namespace Revenge.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult Delete(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavors => flavors.FlavorID == id);

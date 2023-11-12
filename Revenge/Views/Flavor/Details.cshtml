@@ -23,7 +23,7 @@
     </ul>
   }
 
-  @Html.ActionLink("Add Treat to Flavor", "AddTreat", new { id = Model.FlavorID })
+  @Html.ActionLink("Add Treat to Flavor", "AddTreat", new { id = Model.FlavorID }) <br />
   @if (@Model.JoinEntities.Count != 0)
   {
     @Html.ActionLink("Remove Treat from Flavor", "RemoveTreat", new { id = Model.FlavorID })

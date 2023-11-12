@@ -11,8 +11,8 @@ using Revenge.Models;
 namespace Revenge.Migrations
 {
     [DbContext(typeof(RevengeContext))]
-    [Migration("20231112080343_addIdentity")]
-    partial class addIdentity
+    [Migration("20231112094108_addInitianAgain")]
+    partial class addInitianAgain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

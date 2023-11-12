@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Revenge.Models;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace Revenge.Controllers
 {
+
   public class TreatController : Controller
   {
     private readonly RevengeContext _db;
@@ -22,6 +24,7 @@ namespace Revenge.Controllers
       return View(_db.Treats.ToList());
     }
 
+    [Authorize]
     public ActionResult New()
     {
       ViewBag.PageTitle = "Add a Treat";
@@ -54,6 +57,7 @@ namespace Revenge.Controllers
       return View(thisTreat);
     }
 
+    [Authorize]
     public ActionResult AddFlavor(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatID == id);
@@ -75,6 +79,7 @@ namespace Revenge.Controllers
       return RedirectToAction("Details", new { id = treat.TreatID });
     }
 
+    [Authorize]
     public ActionResult Edit(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatID == id);
@@ -89,6 +94,7 @@ namespace Revenge.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult Delete(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatID == id);
